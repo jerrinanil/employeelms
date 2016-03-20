@@ -63,7 +63,7 @@ grails.project.dependency.resolution = {
 		
 		compile ':spring-security-core:1.2.7.3'
 		compile "org.grails.plugins:mail:1.0.7"
-		compile "org.grails.plugins:spring-security-ui:1.0-RC3"
+		//compile "org.grails.plugins:spring-security-ui:1.0-RC3"
 		
 		//compile "org.grails.plugins:spring-security-core:1.2.7.3"
    // compile 'org.springframework.security:spring-security-web:4.0.4.RELEASE'
