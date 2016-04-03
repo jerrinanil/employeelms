@@ -36,9 +36,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/custom.css" rel="stylesheet">
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'custom.css')}"/>
 <link rel="stylesheet" href="${resource(dir: 'js', file: 'custom.js')}"/>
-<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/screenfull.js')}"/>
+<link rel="stylesheet" href="${resource(dir: 'js', file: 'screenfull.js')}"/>
 <script src="js/custom.js"></script>
 <script src="js/screenfull.js"></script>
+
+
 		<script>
 		$(function () {
 			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
@@ -155,10 +157,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <ul class="nav" id="side-menu">
         
                     <li>
-                        <a href="index.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span  class="nav-label" style="color: #ee148f;">Dashboards</span> </a>
+                        <a href="<g:createLink controller="dashboard" action="dashboard" />" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span  class="nav-label" style="color: #ee148f;">Dashboards</span> </a>
                     </li>
                     <li>
-                        <a href="profile.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Profile Page</span> </a>
+                        <a href="<g:createLink controller="secUser" action="show" id="${user.id}" />" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Profile Page</span> </a>
                     </li>
 					<li>
                         <a href="attendance.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Attendance</span> </a>
@@ -269,10 +271,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 
 	<link rel="stylesheet" href="css/clndr.css" type="text/css" />
 	<link rel="stylesheet" href="${resource(dir: 'css', file: 'clndr.css')}"/>
-			<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/underscore-min.js')}"/>
-			<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/moment-2.2.1.js')}"/>
-			<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/clndr.js')}"/>
-			<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/site.js')}"/>
+			<link rel="stylesheet" href="${resource(dir: 'js', file: 'underscore-min.js')}"/>
+			<link rel="stylesheet" href="${resource(dir: 'js', file: 'moment-2.2.1.js')}"/>
+			<link rel="stylesheet" href="${resource(dir: 'js', file: 'clndr.js')}"/>
+			<link rel="stylesheet" href="${resource(dir: 'js', file: 'site.js')}"/>
 			<script src="js/underscore-min.js" type="text/javascript"></script>
 			<script src= "js/moment-2.2.1.js" type="text/javascript"></script>
 			<script src="js/clndr.js" type="text/javascript"></script>
@@ -289,8 +291,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
      
 <!---->
 <!--scrolling js-->
-<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/jquery.nicescroll.js.js')}"/>
-<link rel="stylesheet" href="${resource(dir: 'js', file: 'js/scripts.js')}"/>
+<link rel="stylesheet" href="${resource(dir: 'js', file: 'jquery.nicescroll.js.js')}"/>
+<link rel="stylesheet" href="${resource(dir: 'js', file: 'scripts.js')}"/>
 	<script src="js/jquery.nicescroll.js"></script>
 	<script src="js/scripts.js"></script>
 	<!--//scrolling js-->

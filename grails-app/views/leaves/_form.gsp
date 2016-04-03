@@ -2,7 +2,21 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'approval', 'error')} ">
+	<label for="approval">
+		<g:message code="leaves.approval.label" default="Approval" />
+		
+	</label>
+	<g:checkBox name="approval" value="${leavesInstance?.approval}" />
+</div>
 
+<div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'comments', 'error')} ">
+	<label for="comments">
+		<g:message code="leaves.comments.label" default="Comments" />
+		
+	</label>
+	<g:textField name="comments" value="${leavesInstance?.comments}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'days', 'error')} required">
 	<label for="days">
@@ -10,14 +24,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="days" type="number" value="${leavesInstance.days}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'employee', 'error')} required">
-	<label for="employee">
-		<g:message code="leaves.employee.label" default="Employee" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="employee" name="employee.id" from="${employeelms.Employee.list()}" optionKey="id" required="" value="${leavesInstance?.employee?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'endDate', 'error')} required">
@@ -44,6 +50,13 @@
 	<g:textField name="leaveType" value="${leavesInstance?.leaveType}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'message', 'error')} ">
+	<label for="message">
+		<g:message code="leaves.message.label" default="Message" />
+		
+	</label>
+	<g:textField name="message" value="${leavesInstance?.message}"/>
+</div>
 
 <div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'startDate', 'error')} required">
 	<label for="startDate">
@@ -51,5 +64,13 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:datePicker name="startDate" precision="day"  value="${leavesInstance?.startDate}"  />
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'user', 'error')} required">
+	<label for="user">
+		<g:message code="leaves.user.label" default="User" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="user" name="user.id" from="${employeelms.SecUser.list()}" optionKey="id" required="" value="${leavesInstance?.user?.id}" class="many-to-one"/>
 </div>
 

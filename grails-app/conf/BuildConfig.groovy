@@ -63,10 +63,13 @@ grails.project.dependency.resolution = {
 		
 		compile ':spring-security-core:1.2.7.3'
 		compile "org.grails.plugins:mail:1.0.7"
+		compile "org.grails.plugins:jquery-ui:1.10.4"
 		//compile "org.grails.plugins:spring-security-ui:1.0-RC3"
 		
 		//compile "org.grails.plugins:spring-security-core:1.2.7.3"
    // compile 'org.springframework.security:spring-security-web:4.0.4.RELEASE'
+		compile "org.grails.plugins:calendar:1.2.1"
+		compile "org.grails.plugins:full-calendar:1.5.1.0"
 
 
 

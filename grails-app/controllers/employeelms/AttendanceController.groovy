@@ -18,7 +18,14 @@ class AttendanceController {
     def create() {
         [attendanceInstance: new Attendance(params)]
     }
+	def creater() {
+		[attendanceInstance: new Attendance(params)]
+	}
 	
+	
+	def attendance() {
+		[attendanceInstance: new Attendance(params)]
+	}
 	def leaves() {
 		[attendanceInstance: new Attendance(params)]
 	}

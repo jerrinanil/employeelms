@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type='submit' id="submit" value='${message(code: "springSecurity.login.button")}'/>
 					</label>
 					<p style="color: #EE148F;">Do not have an account?</p>
-				<a href="signup.html" class="hvr-shutter-in-horizontal" style="color: #EE148F;">Signup</a>
+				<a href="<g:createLink controller="secUser" action="newuser" />" class="hvr-shutter-in-horizontal" style="color: #EE148F;">Signup</a>
 			</div>
 			
 			<div class="clearfix"> </div>
