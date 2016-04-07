@@ -11,8 +11,13 @@ class Leaves {
 	String leaveType
 	String comments
 	String message
+	boolean approval
 	
-	static belongsTo = [employee:Employee]
+	static belongsTo = [user:SecUser]
+	
+	String toString(){
+		"${leaveType}"+" "+"${startDate}"+" Approval :"+"${approval}";
+	}
 	
 
     static constraints = {

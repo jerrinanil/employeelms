@@ -7,7 +7,11 @@ class DashboardController {
 	@Secured(['IS_AUTHENTICATED_FULLY'])
 	def index() {
 		if (isLoggedIn()) {
-			 redirect(action: "dashboard")
+			 
+			 def user = springSecurityService.currentUser
+			 
+			 
+			[user:user]
 		 }
    
 		

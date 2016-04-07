@@ -24,11 +24,11 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="approval" title="${message(code: 'leaves.approval.label', default: 'Approval')}" />
+					
 						<g:sortableColumn property="comments" title="${message(code: 'leaves.comments.label', default: 'Comments')}" />
 					
 						<g:sortableColumn property="days" title="${message(code: 'leaves.days.label', default: 'Days')}" />
-					
-						<th><g:message code="leaves.employee.label" default="Employee" /></th>
 					
 						<g:sortableColumn property="endDate" title="${message(code: 'leaves.endDate.label', default: 'End Date')}" />
 					
@@ -42,11 +42,11 @@
 				<g:each in="${leavesInstanceList}" status="i" var="leavesInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${leavesInstance.id}">${fieldValue(bean: leavesInstance, field: "comments")}</g:link></td>
+						<td><g:link action="show" id="${leavesInstance.id}">${fieldValue(bean: leavesInstance, field: "approval")}</g:link></td>
+					
+						<td>${fieldValue(bean: leavesInstance, field: "comments")}</td>
 					
 						<td>${fieldValue(bean: leavesInstance, field: "days")}</td>
-					
-						<td>${fieldValue(bean: leavesInstance, field: "employee")}</td>
 					
 						<td><g:formatDate date="${leavesInstance.endDate}" /></td>
 					

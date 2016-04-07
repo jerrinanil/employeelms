@@ -168,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					
 						<td>${fieldValue(bean: leavesInstance, field: "days")}</td>
 					
-						<td>${fieldValue(bean: leavesInstance, field: "employee")}</td>
+						<td>${fieldValue(bean: leavesInstance, field: "user")}</td>
 					
 						<td><g:formatDate date="${leavesInstance.endDate}" /></td>
 					

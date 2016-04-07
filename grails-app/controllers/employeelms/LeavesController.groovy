@@ -1,9 +1,10 @@
 package employeelms
 
 import org.springframework.dao.DataIntegrityViolationException
-import grails.plugins.springsecurity.Secured
 
 class LeavesController {
+
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -12,8 +13,8 @@ class LeavesController {
     }
 
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        [leavesInstanceList: Leaves.list(params), leavesInstanceTotal: Leaves.count()]
+       params.max = Math.min(max ?: 10, 100)
+		[leavesInstanceList: Leaves.list(params), leavesInstanceTotal: Leaves.count()]
     }
 	
 	def leaveslist(Integer max) {
@@ -21,14 +22,16 @@ class LeavesController {
 		[leavesInstanceList: Leaves.list(params), leavesInstanceTotal: Leaves.count()]
 	}
 
+	def leaves() {
+		
+		def user = springSecurityService.currentUser
+		
+	
+		[leavesInstance: new Leaves(params), currentUserInstance:user]
+	}
     def create() {
         [leavesInstance: new Leaves(params)]
     }
-	
-	
-	def leaves() {
-		[leavesInstance: new Leaves(params)]
-	}
 
     def save() {
         def leavesInstance = new Leaves(params)
@@ -41,8 +44,7 @@ class LeavesController {
         redirect(action: "show", id: leavesInstance.id)
     }
 
-    
-	def show(Long id) {
+    def show(Long id) {
         def leavesInstance = Leaves.get(id)
         if (!leavesInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'leaves.label', default: 'Leaves'), id])

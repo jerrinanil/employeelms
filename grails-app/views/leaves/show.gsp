@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list leaves">
 			
+				<g:if test="${leavesInstance?.approval}">
+				<li class="fieldcontain">
+					<span id="approval-label" class="property-label"><g:message code="leaves.approval.label" default="Approval" /></span>
+					
+						<span class="property-value" aria-labelledby="approval-label"><g:formatBoolean boolean="${leavesInstance?.approval}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${leavesInstance?.comments}">
 				<li class="fieldcontain">
 					<span id="comments-label" class="property-label"><g:message code="leaves.comments.label" default="Comments" /></span>
@@ -37,15 +46,6 @@
 					<span id="days-label" class="property-label"><g:message code="leaves.days.label" default="Days" /></span>
 					
 						<span class="property-value" aria-labelledby="days-label"><g:fieldValue bean="${leavesInstance}" field="days"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${leavesInstance?.employee}">
-				<li class="fieldcontain">
-					<span id="employee-label" class="property-label"><g:message code="leaves.employee.label" default="Employee" /></span>
-					
-						<span class="property-value" aria-labelledby="employee-label"><g:link controller="employee" action="show" id="${leavesInstance?.employee?.id}">${leavesInstance?.employee?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -91,6 +91,15 @@
 					<span id="startDate-label" class="property-label"><g:message code="leaves.startDate.label" default="Start Date" /></span>
 					
 						<span class="property-value" aria-labelledby="startDate-label"><g:formatDate date="${leavesInstance?.startDate}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${leavesInstance?.user}">
+				<li class="fieldcontain">
+					<span id="user-label" class="property-label"><g:message code="leaves.user.label" default="User" /></span>
+					
+						<span class="property-value" aria-labelledby="user-label"><g:link controller="secUser" action="show" id="${leavesInstance?.user?.id}">${leavesInstance?.user?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    		<li class="dropdown at-drop">
 		              
 					<li class="dropdown">
-		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret" style="color: #ee148f;">User<i class="caret"></i></span><img src="images/wo.jpg"></a>
+		              <a href="#" class="dropdown-toggle dropdown-at" data-toggle="dropdown"><span class=" name-caret" style="color: #ee148f;">${currentUserName}<i class="caret"></i></span><img src="images/wo.jpg"></a>
 		              <ul class="dropdown-menu " role="menu">
 		                <li><a href="editprofile.html"><i class="fa fa-user"style="color: #ee148f;" ></i>Edit Profile</a></li>
 		                <li><a href="#"><i class="fa fa-envelope" style="color: #ee148f;"></i>Logout</a></li>
@@ -106,11 +106,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
         
-                    <li>
-                        <a href="index.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Dashboards</span> </a>
+                   <li>
+                        <a href="<g:createLink controller="dashboard" action="dashboard" />" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span  class="nav-label" style="color: #ee148f;">Dashboards</span> </a>
                     </li>
                     <li>
-                        <a href="profile.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Profile Page</span> </a>
+                        <a href="<g:createLink controller="secUser"  action="show" id="${currentUserInstance.id}" />" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Profile Page</span> </a>
                     </li>
 					<li>
                         <a href="attendance.html" class=" hvr-bounce-to-right"><i class="fa fa-dashboard nav_icon "></i><span class="nav-label" style="color: #ee148f;">Attendance</span> </a>
@@ -118,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     
                     
                     <li>
-                        <a href="leave.html" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label" style="color: #ee148f;">Apply for Leave</span> </a>
+                        <a href="<g:createLink controller="leaves" action="leaves" />" class=" hvr-bounce-to-right"><i class="fa fa-inbox nav_icon"></i> <span class="nav-label" style="color: #ee148f;">Apply for Leave</span> </a>
                     </li>
                   </ul>
             </div>
@@ -153,11 +153,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<fieldset class="form">
 					
 			<div class="col-md-12 form-group2 group-mail">
-              <div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'employee', 'error')} required">
-				<label for="employee">
+              <div class="fieldcontain ${hasErrors(bean: leavesInstance, field: 'employee', 'error')} required" style="margin-top: 30px;margin-bottom: 20px;">
+				<label for="employee" >
 					<label class="control-label "style="color: #ee148f;">Name</label> 
 				</label>
-				<g:select style="width: 199px; margin-left: 211px;" id="employee" name="employee.id" from="${employeelms.Employee.list()}" optionKey="id" required="" value="${leavesInstance?.employee?.id}" class="many-to-one"/>
+			
+					<g:textField id="name" name="name" readonly="readonly"  class="form-control1" style="margin-left: 132px; width: 438px; height: 34px;" style="color: #ee148f;" optionKey="id" value="${currentUserInstance.name}"/>
+<br><br>
+				<label for="employee">
+					<label class="control-label "style="color: #ee148f;">EmployeeId</label> 
+				</label>
+			
+					<g:textField id="user" name="user.employeeid" readonly="readonly"  class="form-control1" style="margin-left: 132px; width: 438px; height: 34px;" style="color: #ee148f;" optionKey="id" value="${currentUserInstance.employeeId}"/>
+				
+				<label for="employee">
+					<label class="control-label "style="color: #ee148f;">DBId</label> 
+				</label>
+			
+					<g:textField id="user" name="user.id" readonly="readonly"  class="form-control1" style="margin-left: 132px; width: 438px; height: 34px;" style="color: #ee148f;" optionKey="id" value="${currentUserInstance.id}"/>
+				
 				</div>
 			</div>
 		
@@ -238,7 +252,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</fieldset>
 				<fieldset >
 				<div class="profile-btn">
-					<g:submitButton name="create" class="btn-primary btn"  style="color: #fff; margin-right: 1547px;" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+					<g:submitButton name="create" class="btn-primary btn"  style="color: #fff; margin-right: 1547px;" value="Apply" />
 					 
 				</div>
 				</fieldset>
